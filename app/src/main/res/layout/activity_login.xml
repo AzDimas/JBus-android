@@ -8,7 +8,7 @@
     tools:context=".LoginActivity"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/fiks"
+    android:background="@drawable/fin"
     >
 
     <TextView
@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="GLORY JBUS"
+        android:text="JBUSpreme"
         android:textColor="@color/white"
         android:background="#ff0000"
         android:textStyle="bold|italic"
@@ -27,8 +27,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="@color/black"
-        android:text="Siap bawa kamu menuju juara tanpa membahas sejarah"
+        android:textColor="#ff0000"
+        android:text="Where Supreme Meets Commute"
         />
 
     <LinearLayout
@@ -50,7 +50,8 @@
             android:drawablePadding="8dp"
             android:padding="8dp"
             android:inputType="textEmailAddress"
-            android:textColorHint="@color/black"
+            android:textColorHint="#ff0000"
+            android:textColor="#ff0000"
             android:minHeight="48dp" />
 
         <EditText
@@ -64,7 +65,8 @@
             android:drawablePadding="8dp"
             android:padding="8dp"
             android:inputType="textPassword"
-            android:textColorHint="@color/black"
+            android:textColorHint="#ff0000"
+            android:textColor="#ff0000"
             android:minHeight="48dp" />
 
 
@@ -89,7 +91,7 @@
             android:paddingTop="10dp"
             android:text="Don't have an account?"
             android:textAlignment="center"
-            android:textColor="#000000" />
+            android:textColor="#ff0000" />
 
         <TextView
             android:id="@+id/register_now"
@@ -101,7 +103,7 @@
             android:paddingTop="5dp"
             android:text="Register Now"
             android:textAlignment="center"
-            android:textColor="#000000"
+            android:textColor="#ff0000"
             android:textStyle="bold" />
 
     </LinearLayout>
