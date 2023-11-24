@@ -114,6 +114,7 @@
                 android:minHeight="48dp" />
             
             <Button
+                android:id="@+id/ButtonTopUp"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:textColor="@color/white"
