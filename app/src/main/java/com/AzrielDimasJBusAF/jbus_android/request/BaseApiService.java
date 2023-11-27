@@ -1,6 +1,8 @@
 package com.AzrielDimasJBusAF.jbus_android.request;
 import com.AzrielDimasJBusAF.jbus_android.model.Account;
 import com.AzrielDimasJBusAF.jbus_android.model.BaseResponse;
+import com.AzrielDimasJBusAF.jbus_android.model.Renter;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -26,4 +28,11 @@ public interface BaseApiService {
     Call<BaseResponse<Double>> topUp(
             @Path("id") int id,
             @Query("amount") double amount);
+
+    @POST("/{id}/registerRenter")
+    Call<BaseResponse<Renter>> registerRenter(
+            @Path("id") int id,
+            @Query("companyName") String companyName,
+            @Query("address") String address,
+            @Query("phoneNumber") String phoneNumber);
 }

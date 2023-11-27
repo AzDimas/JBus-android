@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 import com.AzrielDimasJBusAF.jbus_android.model.BaseResponse;
 import com.AzrielDimasJBusAF.jbus_android.request.BaseApiService;
@@ -49,7 +51,37 @@ public class AboutMeActivity extends AppCompatActivity {
         topupAmount = findViewById(R.id.topup);
         topupButton = findViewById(R.id.ButtonTopUp);
         topupButton.setOnClickListener(v -> handleTopup());
+
+        if (LoginActivity.loggedAccount.company != null) {
+            TextView textView = findViewById(R.id.status);
+            textView.setText("You're Already Registered as a Renter");
+
+            TextView registerRenter = findViewById(R.id.Register_Company);
+            registerRenter.setVisibility(View.GONE);
+
+
+            Button manageBusButton = findViewById(R.id.Manage_Bus);
+            manageBusButton.setOnClickListener(v -> {moveActivity(mContext, ManageBusActivity.class);
+            });
+        } else {
+            TextView textView = findViewById(R.id.status);
+            textView.setText("You're Not Registered as a Renter");
+
+            Button manageBusButton = findViewById(R.id.Manage_Bus);
+            manageBusButton.setVisibility(View.GONE);
+
+            TextView registerCompany = findViewById(R.id.Register_Company);
+            registerCompany.setOnClickListener(v -> {moveActivity(mContext, RegisterRenterActivity.class);
+            });
         }
+
+
+
+    }
+    private void moveActivity(Context ctx, Class<?> cls) {
+        Intent intent = new Intent(ctx, cls);
+        startActivity(intent);
+    }
 
     protected void handleTopup(){
         String topUpAmountS = topupAmount.getText().toString();
