@@ -84,7 +84,7 @@
             android:drawableStart="@drawable/baseline_phone_enabled_24"
             android:drawablePadding="8dp"
             android:padding="8dp"
-            android:inputType="textPassword"
+            android:inputType="number"
             android:minHeight="48dp"
             android:autofillHints="" />
 

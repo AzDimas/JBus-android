@@ -5,17 +5,26 @@ import androidx.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a Bus entity.
+ */
 public class Bus extends Serializable {
-    public int accountId;
-    public String name;
-    public List<Facility> facilities;
-    public Price price;
-    public int capacity;
-    public BusType busType;
-    public Station departure;
-    public Station arrival;
-    public List<Schedule> schedules;
+    public int accountId; // Account ID associated with the bus
+    public String name; // Name of the bus
+    public List<Facility> facilities; // List of facilities available on the bus
+    public Price price; // Price details for the bus
+    public int capacity; // Maximum seating capacity of the bus
+    public BusType busType; // Type of bus
+    public Station departure; // Departure station of the bus
+    public Station arrival; // Arrival station of the bus
+    public List<Schedule> schedules; // List of schedules for the bus
 
+    /**
+     * Generates a list of sample buses.
+     *
+     * @param size Number of sample buses to generate.
+     * @return List of sample Bus objects.
+     */
     public static List<Bus> sampleBusList(int size) {
         List<Bus> busList = new ArrayList<>();
 
@@ -28,6 +37,11 @@ public class Bus extends Serializable {
         return busList;
     }
 
+    /**
+     * Provides a string representation of the bus.
+     *
+     * @return String representation (bus name).
+     */
     @NonNull
     @Override
     public String toString() {

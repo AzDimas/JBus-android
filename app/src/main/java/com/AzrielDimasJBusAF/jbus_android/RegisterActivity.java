@@ -1,5 +1,6 @@
 package com.AzrielDimasJBusAF.jbus_android;
 
+//Import statement
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -18,6 +19,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Activity responsible for user registration.
+ */
 public class RegisterActivity extends AppCompatActivity {
     private BaseApiService mApiService;
     private Context mContext;
@@ -35,11 +39,14 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         registerButton = findViewById(R.id.login_button);
         registerButton.setOnClickListener(v -> {
-            handleRegister();
-            moveActivity(this, LoginActivity.class);
+            handleRegister(); // Initiates the registration process
+            moveActivity(this, LoginActivity.class); // Moves to LoginActivity after registration
         });
     }
 
+    /**
+     * Handles the registration process.
+     */
     protected void handleRegister() {
         String nameS = name.getText().toString();
         String emailS = email.getText().toString();
@@ -58,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 BaseResponse<Account> res = response.body();
 
-                if (res.success) finish();
+                if (res.success) finish(); // Finishes registration upon successful response
                 Toast.makeText(mContext, res.message, Toast.LENGTH_SHORT).show();
             }
             @Override
@@ -68,11 +75,23 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Moves to another activity.
+     *
+     * @param ctx The context.
+     * @param cls The class to move to.
+     */
     private void moveActivity(Context ctx, Class<?> cls){
         Intent intent = new Intent(ctx, cls);
         startActivity(intent);
     }
 
+    /**
+     * Displays a Toast message.
+     *
+     * @param ctx     The context.
+     * @param message The message to display.
+     */
     private void viewToast(Context ctx, String message){
         Toast.makeText(ctx, message, Toast.LENGTH_SHORT).show();
     }

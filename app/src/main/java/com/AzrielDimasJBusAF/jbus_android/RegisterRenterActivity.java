@@ -1,5 +1,6 @@
 package com.AzrielDimasJBusAF.jbus_android;
 
+//Import statement
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -19,6 +20,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Activity responsible for registering a new renter (company).
+ */
 public class RegisterRenterActivity extends AppCompatActivity {
 
     private BaseApiService mApiService;
@@ -43,6 +47,10 @@ public class RegisterRenterActivity extends AppCompatActivity {
 
         registerButtonCompany.setOnClickListener(v -> handleRegisterRenter());
     }
+
+    /**
+     * Handles the registration of a new renter.
+     */
     protected void handleRegisterRenter(){
         String companyNameS = companyName.getText().toString();
         String addresS = address.getText().toString();
@@ -53,6 +61,8 @@ public class RegisterRenterActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             return;
         }
+
+        // Sends the registration request to the server
         mApiService.registerRenter(LoginActivity.loggedAccount.id,   companyNameS, addresS, phoneNumberS).enqueue(new Callback<BaseResponse<Renter>>(){
             @Override
             public void onResponse(Call<BaseResponse<Renter>> call, Response<BaseResponse<Renter>> response){
@@ -64,7 +74,7 @@ public class RegisterRenterActivity extends AppCompatActivity {
 
                 if (res.success){
                     LoginActivity.loggedAccount.company = res.payload;
-                    moveActivity(mContext, AboutMeActivity.class);
+                    moveActivity(mContext, AboutMeActivity.class); // Moves to AboutMeActivity on successful registration
                 }
 
                 Toast.makeText(mContext, res.message, Toast.LENGTH_SHORT).show();
@@ -77,6 +87,13 @@ public class RegisterRenterActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * Moves to another activity.
+     *
+     * @param ctx The context.
+     * @param cls The class to move to.
+     */
     private void moveActivity(Context ctx, Class<?> cls){
         Intent intent = new Intent(ctx, cls);
         startActivity(intent);

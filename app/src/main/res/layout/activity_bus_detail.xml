@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context=".BusDetailActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail_imagelayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sbrb"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="200dp"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_imagelayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/detail_titlelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:id="@+id/detail_nametext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BUS"
+                    android:textColor="#ff0000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:id="@+id/detail_addresslayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_pricetext"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/detail_capacity"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ff0000"
+                    android:text="20"/>
+
+                <TextView
+                    android:id="@+id/detail_bustype"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ff0000"
+                    android:text="Reguler"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/detail_pricetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/detail_titlelayout"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#ff0000"
+                android:text="Rp 100.000"/>
+
+
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/detail_spinnerlayout"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/detail_addresslayout">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/detail_stationdeparture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:textColor="#ff0000"
+                        android:text="Terminal Jatijajar"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_gravity="center"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/detail_stationarrival"
+                        android:textColor="#ff0000"
+                        android:text="Terminal Giwangan"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/detail_descriptionfacilitytext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/detail_spinnerlayout"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#ff0000"
+                android:textSize="18dp"
+                android:layout_marginTop="20dp"
+                android:text="Fasilitas"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/detail_facilitylayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:useDefaultMargins="true"
+                android:padding="5dp"
+                app:layout_constraintTop_toBottomOf="@id/detail_descriptionfacilitytext">
+
+                <ToggleButton
+                    android:textColor="#ff0000"
+                    android:clickable="false"
+                    android:id="@+id/detail_ac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="14sp"
+                    android:textOff="AC"
+                    android:textOn="AC"
+                    android:textAllCaps="false"
+                    />
+
+                <ToggleButton
+                    android:textColor="#ff0000"
+                    android:clickable="false"
+                    android:id="@+id/detail_wifi"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="14sp"
+                    android:textOff="Wifi"
+                    android:textOn="Wifi"
+                    android:textAllCaps="false"
+                    />
+
+                <ToggleButton
+                    android:textColor="#ff0000"
+                    android:clickable="false"
+                    android:id="@+id/detail_toilet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="14sp"
+                    android:textOff="Toilet"
+                    android:textOn="Toilet"
+                    android:textAllCaps="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/detail_facilitylayout2"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/detail_facilitylayout1">
+
+                <ToggleButton
+                    android:textColor="#ff0000"
+                    android:clickable="false"
+                    android:id="@+id/detail_lcdtv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="14sp"
+                    android:textOff="LCD TV"
+                    android:textOn="LCD TV"
+                    android:textAllCaps="false"
+                    />
+                <ToggleButton
+                    android:textColor="#ff0000"
+                    android:clickable="false"
+                    android:id="@+id/detail_coolbox"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="14sp"
+                    android:textOff="Coolbox"
+                    android:textOn="Coolbox"
+                    android:textAllCaps="false"
+                    />
+                <ToggleButton
+                    android:textColor="#ff0000"
+                    android:id="@+id/detail_lunch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:clickable="false"
+                    android:textSize="14sp"
+                    android:textOff="Lunch"
+                    android:textOn="Lunch"
+                    android:textAllCaps="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/detail_facilitylayout2">
+                <ToggleButton
+                    android:textColor="#ff0000"
+                    android:id="@+id/detail_largebaggage"
+                    android:clickable="false"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="14sp"
+                    android:textOff="Large Baggage"
+                    android:textOn="Large Baggage"
+                    android:textAllCaps="false"
+                    />
+                <ToggleButton
+                    android:textColor="#ff0000"
+                    android:id="@+id/detail_electricsocket"
+                    android:clickable="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="14sp"
+                    android:textOff="Electric Socket"
+                    android:textOn="Electric Socket"
+                    android:textAllCaps="false"
+                    />
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detail_bookbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Pesan Bus"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:backgroundTint="#ff0000"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
